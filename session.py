@@ -5,8 +5,8 @@ from chordata.util.tenant_prefix import tenant_prefix
 def login(e: ServerEnvironment, s: dict):
     prefix = tenant_prefix(e)
     injector = e.get_injection_manager()
-    AuthenticationModel = injector.get('apps.authentication.lib.m.authenticate', 'AuthenticationModel')
-    AuthenticateController = injector.get('apps.authentication.lib.c.authenticate', 'AuthenticateController')
+    AuthenticationModel = injector.get('apps.authentication.local_lib.m.authenticate', 'AuthenticationModel')
+    AuthenticateController = injector.get('apps.authentication.local_lib.c.authenticate', 'AuthenticateController')
     controller = AuthenticateController(
         s,
         e.get_configuration(),
