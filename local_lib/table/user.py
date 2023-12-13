@@ -1,5 +1,5 @@
 def test_login(conn, username: str, password: str):
-    from apps.authentication.lib.utility import strip_hex, hash_password
+    from apps.authentication.local_lib.utility import strip_hex, hash_password
     from sqlalchemy.sql import text
     import datetime
     q = """

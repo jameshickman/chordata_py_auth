@@ -13,7 +13,7 @@ class AuthenticateController(ControllerBase):
         user_data = self.authenticationmodel.login(username, data.get('password'))
         if user_data is not False:
             roles = self.authenticationmodel.roles(username)
-            tenants = self.authenticationmodel.tenants()
+            tenants = self.authenticationmodel.tenants(data.get('tenant'))
             r = {
                 "authenticated": True,
                 "user_data": user_data,

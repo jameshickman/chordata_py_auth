@@ -27,6 +27,6 @@ class AuthenticationModel(ModelBase):
             rv[tenant[0]] = self.directory_services.get_groups(tenant[0], username)
         return rv
 
-    def tenants(self):
+    def tenants(self, tenant: str):
         return self.directory_services.list_tenants()
 
