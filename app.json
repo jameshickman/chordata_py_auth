@@ -3,7 +3,7 @@
   "name_human": "Authentication provider",
   "description": "Default implementation for user authentication.",
   "author": "James Hickman",
-  "author_email": "james@jameshickman.net",
+  "author_email": "james@rationalboxes.com",
   "documentation_url": "https://github.com/jameshickman/chordata_py_auth/wiki/Default-Authentication-Provider",
   "git_repo": "https://github.com/jameshickman/chordata_py_auth",
   "core_min_version": "0.1.0",
