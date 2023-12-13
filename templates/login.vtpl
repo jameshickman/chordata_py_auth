@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="/global.css" />
+    <link rel="stylesheet" href="/authentication/css/styles.css" />
+</head>
+<body>
+<div class="login__outer-container">
+    <div class="login__container">
+#if ($failed_login)
+        <div class="login__failed-message-container">
+            Bad username or password.
+        </div>
+#end
+        <form action="${prefix}/authentication/authenticate?forward_to=${prefix}${forward_to}" method="post">
+            <div class="login__form-row">
+                <label for="username">Username or email address</label>
+                <input type="text" id="username" name="username"/>
+            </div>
+            <div class="login__form-row">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password"/>
+            </div>
+            <div class="login__form-row">
+                <input type="submit" value="Log-in" />
+            </div>
+            <div class="login__reset-link">
+                <a href="${prefix}/authentication/reset_password_request">Password reset</a>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

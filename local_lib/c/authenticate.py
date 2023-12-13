@@ -1,5 +1,5 @@
 from chordata.interfaces.controller import ControllerBase
-from apps.authentication.lib.m.authenticate import AuthenticationModel
+from apps.authentication.local_lib.m.authenticate import AuthenticationModel
 
 
 class AuthenticateController(ControllerBase):

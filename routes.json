@@ -1,7 +1,7 @@
 {
     "authenticate": {
         "package": "session",
-        "function": "login"
+        "function": "authenticate"
     },
     "end_session": {
         "package": "session",

@@ -2,7 +2,7 @@ from chordata.server_env import ServerEnvironment
 from chordata.util.tenant_prefix import tenant_prefix
 
 
-def login(e: ServerEnvironment, s: dict):
+def authenticate(e: ServerEnvironment, s: dict):
     prefix = tenant_prefix(e)
     injector = e.get_injection_manager()
     AuthenticationModel = injector.get('apps.authentication.local_lib.m.authenticate', 'AuthenticationModel')
@@ -54,6 +54,22 @@ def end_session(e: ServerEnvironment, s: dict):
     for key in list(keys):
         del s[key]
     return {}, {'serviceOf': 'json'}
+
+
+def login(e: ServerEnvironment, s: dict):
+    r = {}
+    query_string = e.get_query()
+    forward_to = query_string.get('forward_to', '')
+    if query_string.get('failed'):
+        r['failed_login'] = True
+    if forward_to == '':
+        forward_to = e.get_configuration().get('user_landing')
+        if forward_to is None or forward_to == '':
+            # forward_to = "/authentication/profile"
+            forward_to = "/test/index"
+    r['forward_to'] = forward_to
+    r['prefix'] = tenant_prefix(e)
+    return r, {'template': 'login.vtpl', 'type': 'text/html'}
 
 
 def logout(e: ServerEnvironment, s: dict):
