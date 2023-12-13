@@ -7,6 +7,10 @@
         "package": "session",
         "function": "end_session"
     },
+    "login": {
+        "package": "session",
+        "function": "login"
+    },
     "logout": {
         "package": "session",
         "function": "logout"
