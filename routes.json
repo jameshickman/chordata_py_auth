@@ -1,0 +1,14 @@
+{
+    "authenticate": {
+        "package": "session",
+        "function": "login"
+    },
+    "end_session": {
+        "package": "session",
+        "function": "end_session"
+    },
+    "logout": {
+        "package": "session",
+        "function": "logout"
+    }
+}
