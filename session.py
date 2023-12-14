@@ -25,7 +25,7 @@ def authenticate(e: ServerEnvironment, s: dict):
     }
     mode = e.get_data_type()
     if mode == "POST" or mode == "JSON":
-        data = e.get_data().getValues()
+        data = e.get_data()
         values = {
             'username': data.get('username', {}).get('value'),
             'password': data.get('password', {}).get('value'),
