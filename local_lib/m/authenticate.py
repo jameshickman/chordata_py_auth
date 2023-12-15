@@ -1,4 +1,4 @@
-from chordata.interfaces.model import ModelBase
+from chordate.interfaces.model import ModelBase
 
 
 """

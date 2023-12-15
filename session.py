@@ -1,5 +1,5 @@
-from chordata.server_env import ServerEnvironment
-from chordata.util.tenant_prefix import tenant_prefix
+from chordate.server_env import ServerEnvironment
+from chordate.util.tenant_prefix import tenant_prefix
 
 
 def authenticate(e: ServerEnvironment, s: dict):

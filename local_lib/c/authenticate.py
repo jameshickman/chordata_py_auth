@@ -1,4 +1,4 @@
-from chordata.interfaces.controller import ControllerBase
+from chordate.interfaces.controller import ControllerBase
 from apps.authentication.local_lib.m.authenticate import AuthenticationModel
 
 
