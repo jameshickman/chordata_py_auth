@@ -54,7 +54,7 @@ def setup(database):
 
 
 def init_roles(database):
-    from apps.authentication.lib.models.roles import Roles
+    from apps.authentication.local_lib.models.roles import Roles
     sess = database.get_connection()
     roles = ['user', "owner", "manager"]
     for role in roles:

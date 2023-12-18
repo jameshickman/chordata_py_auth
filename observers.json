@@ -1,0 +1,10 @@
+{
+  "interface_user_information": {
+    "package": "form_provider",
+    "function": "user_info"
+  },
+  "interface_user_form": {
+    "package": "form_provider",
+    "function": "user_form"
+  }
+}

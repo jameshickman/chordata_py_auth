@@ -14,5 +14,10 @@
     "logout": {
         "package": "session",
         "function": "logout"
+    },
+    "my_user_data": {
+        "package": "session",
+        "function": "get_user_info",
+        "permissions": ["user"]
     }
 }

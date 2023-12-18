@@ -77,3 +77,7 @@ def logout(e: ServerEnvironment, s: dict):
     for key in list(keys):
         del s[key]
     return {}, {"redirect": tenant_prefix(e) + "/authentication/login"}
+
+
+def get_user_info(e: ServerEnvironment, s: dict):
+    return s.get('user_info'), {'serviceOf': 'json'}
