@@ -43,7 +43,7 @@ def authenticate(e: ServerEnvironment, s: dict):
         else:
             e.get_event_manager().send("user_authenticated", r)
     if mode == "JSON":
-        return [r, {'serviceOf': 'json'}]
+        return r, {'serviceOf': 'json'}
     else:
         forward_to = e.query.get('forward_to', '/')
         return {}, {"redirect": forward_to}
