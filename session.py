@@ -89,7 +89,7 @@ def update_my_info(e: ServerEnvironment, s: dict):
         'updated': False
     }
     injector = e.get_injection_manager()
-    if e.get_data_type() == 'JSON':
+    if e.get_data_type() == 'POST':
         User = injector.get('apps.authentication.local_lib.m.user', 'User')
         c = UserController(
             s,
