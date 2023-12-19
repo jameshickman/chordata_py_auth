@@ -10,6 +10,7 @@ class AuthenticateController(ControllerBase):
             "authenticated": False
         }
         roles = None
+        tenants = self.authenticationmodel.tenants(data.get('tenant'))
         username = data.get('username')
         password = data.get('password')
         user_data = self.authenticationmodel.login(username, password)
@@ -26,11 +27,13 @@ class AuthenticateController(ControllerBase):
                     'first_name': self.configuration.get('founder_first_name', ''),
                     'last_name': self.configuration.get('founder_last_name', '')
                 }
-                roles = self.configuration.get('founder_roles').split(',')
+                founder_roles = self.configuration.get('founder_roles').split(',')
+                roles = {}
+                for tenant in tenants:
+                    roles[tenant] = founder_roles
         if user_data is not False:
             if roles is None:
                 roles = self.authenticationmodel.roles(username)
-            tenants = self.authenticationmodel.tenants(data.get('tenant'))
             r = {
                 "authenticated": True,
                 "user_data": user_data,
