@@ -19,5 +19,10 @@
         "package": "session",
         "function": "get_user_info",
         "permissions": ["user"]
+    },
+    "update_my_info": {
+        "package": "session",
+        "function": "update_my_info",
+        "permissions": ["user"]
     }
 }

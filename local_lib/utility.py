@@ -17,7 +17,6 @@ REQUIRED_PASSWORD_LENGTH = 12
 
 
 def password_complexity_check(password: str):
-    return True
     import re
     if re.search(r'[A-Z]', password) and re.search(r'[a-z]', password)\
             and re.search(r'[0-9]', password) and len(password) < int(REQUIRED_PASSWORD_LENGTH):
@@ -43,9 +42,9 @@ def create_user(
 ):
     import os
     import binascii
-    from apps.authentication.lib.models.user import User
-    from apps.authentication.lib.models.roles import Roles
-    from apps.authentication.lib.models.usersroles import UsersRoles
+    from apps.authentication.local_lib.models.user import User
+    from apps.authentication.local_lib.models.roles import Roles
+    from apps.authentication.local_lib.models.usersroles import UsersRoles
     local_enabled = False
     if password is not False:
         salt = bytes(binascii.hexlify(os.urandom(32)))

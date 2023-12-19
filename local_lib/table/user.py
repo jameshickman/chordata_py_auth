@@ -92,6 +92,35 @@ def load_user(conn, user_name: str):
     }
 
 
+def set_user_info(conn,
+                  user_name: str,
+                  first_name: str,
+                  last_name: str,
+                  email: str,
+                  organization: str,
+                  phone_number: str):
+    from sqlalchemy import text
+    q = """
+        UPDATE authentication.user SET
+            first_name = :first,
+            last_name = :last,
+            organization = :organization,
+            phone_number = :phone_number
+        WHERE user_name = :user_name
+    """
+    statement = text(q)
+    conn.execute(statement,
+                 {
+                     "user_name": user_name,
+                     "first_name": first_name,
+                     "last_name": last_name,
+                     "organization": organization,
+                     "phone_number": phone_number
+                 }
+                 )
+    return
+
+
 def begin_email_reset(conn, user_email):
     from sqlalchemy.sql import text
     import uuid

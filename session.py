@@ -81,3 +81,32 @@ def logout(e: ServerEnvironment, s: dict):
 
 def get_user_info(e: ServerEnvironment, s: dict):
     return s.get('user_info'), {'serviceOf': 'json'}
+
+
+def update_my_info(e: ServerEnvironment, s: dict):
+    from apps.authentication.local_lib.c.user import UserController
+    rv = {
+        'updated': False
+    }
+    injector = e.get_injection_manager()
+    if e.get_data_type() == 'JSON':
+        User = injector.get('apps.authentication.local_lib.m.user', 'User')
+        c = UserController(
+            s,
+            e.get_configuration(),
+            [
+                User(e.get_database(), e.get_configuration())
+            ]
+        )
+        data = e.get_data()
+        c.set_user_info(
+            data.get('username', {}).get('value'),
+            data.get('first_name', {}).get('value'),
+            data.get('last_name', {}).get('value'),
+            data.get('email', {}).get('value'),
+            data.get('organization', {}).get('value'),
+            data.get('phone_number', {}).get('value'),
+            data.get('password', {}).get('value')
+        )
+        rv['updated'] = True
+    return rv, {'serviceOf': 'json'}
