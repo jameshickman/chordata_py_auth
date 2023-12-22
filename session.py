@@ -41,7 +41,7 @@ def authenticate(e: ServerEnvironment, s: dict):
             else:
                 return r, {'serviceOf': 'json'}
         else:
-            e.get_event_manager().send("user_authenticated", r)
+            r["addendum"] = e.get_event_manager().send("user_authenticated", r)
     if mode == "JSON":
         return r, {'serviceOf': 'json'}
     else:
