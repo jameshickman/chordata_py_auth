@@ -1,4 +1,4 @@
-from chordate.interfaces.model import ModelBase
+from chordataweb.interfaces.model import ModelBase
 
 
 class User(ModelBase):

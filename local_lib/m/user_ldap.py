@@ -1,4 +1,4 @@
-from chordate.interfaces.model import ModelBase
+from chordataweb.interfaces.model import ModelBase
 
 
 class User(ModelBase):
@@ -10,7 +10,7 @@ class User(ModelBase):
                organization: str = None,
                phone_number: str = None,
                password: str = None):
-        from chordate.ldap.interface import DirectoryServices
+        from chordataweb.ldap.interface import DirectoryServices
         ds = DirectoryServices(self.configuration)
         ds.connect(
             self.connection.get('ldap_bind_user'),

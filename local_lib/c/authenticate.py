@@ -1,8 +1,8 @@
-from chordate.interfaces.controller import ControllerBase
+from chordataweb.interfaces.controller import BaseController
 from apps.authentication.local_lib.m.authenticate import AuthenticationModel
 
 
-class AuthenticateController(ControllerBase):
+class AuthenticateController(BaseController):
     authenticationmodel = AuthenticationModel()
 
     def do_post(self, data: dict):

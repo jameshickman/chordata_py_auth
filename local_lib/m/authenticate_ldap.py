@@ -1,6 +1,6 @@
-from chordate.interfaces.database import BaseDatabase
-from chordate.interfaces.model import ModelBase
-from chordate.ldap.interface import DirectoryServices
+from chordataweb.interfaces.database import BaseDatabase
+from chordataweb.interfaces.model import ModelBase
+from chordataweb.ldap.interface import DirectoryServices
 
 
 class AuthenticationModel(ModelBase):

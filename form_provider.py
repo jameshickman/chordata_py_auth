@@ -1,5 +1,5 @@
-from chordate.events import EventParams
-from chordate.tagbuilder import TagBuilder
+from chordataweb.events import EventParams
+from chordataweb.tagbuilder import TagBuilder
 
 
 def user_info(e: EventParams) -> dict:

@@ -1,8 +1,8 @@
-from chordate.interfaces.controller import ControllerBase
+from chordataweb.interfaces.controller import BaseController
 from apps.authentication.local_lib.m.user import User
 
 
-class UserController(ControllerBase):
+class UserController(BaseController):
     user = User()
 
     def set_user_info(self,
