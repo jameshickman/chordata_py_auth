@@ -1,4 +1,4 @@
-from chordataweb.interfaces.model import ModelBase
+from chordataweb.interfaces.model import BaseModel
 
 
 """
@@ -9,7 +9,7 @@ implementation.
 """
 
 
-class AuthenticationModel(ModelBase):
+class AuthenticationModel(BaseModel):
     def login(self, username: str, password: str):
         from apps.authentication.local_lib.table.user import test_login
         return test_login(self.connection, username, password)

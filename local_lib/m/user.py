@@ -1,7 +1,7 @@
-from chordataweb.interfaces.model import ModelBase
+from chordataweb.interfaces.model import BaseModel
 
 
-class User(ModelBase):
+class User(BaseModel):
     def update(self,
                username: str,
                first_name: str,

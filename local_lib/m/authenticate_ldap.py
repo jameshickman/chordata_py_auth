@@ -1,9 +1,9 @@
 from chordataweb.interfaces.database import BaseDatabase
-from chordataweb.interfaces.model import ModelBase
+from chordataweb.interfaces.model import BaseModel
 from chordataweb.ldap.interface import DirectoryServices
 
 
-class AuthenticationModel(ModelBase):
+class AuthenticationModel(BaseModel):
     directory_services = None
 
     def __init__(self, database: BaseDatabase = None, configuration: dict = None):
