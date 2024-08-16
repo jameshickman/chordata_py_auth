@@ -65,8 +65,7 @@ def login(e: ServerEnvironment, s: dict):
     if forward_to == '':
         forward_to = e.get_configuration().get('user_landing')
         if forward_to is None or forward_to == '':
-            # forward_to = "/authentication/profile"
-            forward_to = "/test/index"
+            forward_to = "/authentication/profile"
     r['forward_to'] = forward_to
     r['prefix'] = tenant_prefix(e)
     return r, {'template': 'login.vtpl', 'type': 'text/html'}
