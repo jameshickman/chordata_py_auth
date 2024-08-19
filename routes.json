@@ -24,5 +24,20 @@
         "package": "session",
         "function": "update_my_info",
         "permissions": ["user"]
+    },
+    "administration/user/list": {
+        "package": "administration",
+        "function": "list_users",
+        "permissions": ["user", "manager"]
+    },
+    "administration/user/get/{user_id}": {
+        "package": "administration",
+        "function": "get_user",
+        "permissions": ["user", "manager"]
+    },
+    "administration/user/create": {
+        "package": "administration",
+        "function": "create_update_user",
+        "permissions": ["user", "manager"]
     }
 }
